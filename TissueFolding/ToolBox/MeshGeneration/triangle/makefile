@@ -72,8 +72,10 @@ CC = cc
 # An example CSWITCHES line is:
 #
 #   CSWITCHES = -O -DNO_TIMER -DLINUX -I/usr/X11R6/include -L/usr/X11R6/lib
-
-CSWITCHES = -O -DLINUX -I/usr/X11R6/include -L/usr/X11R6/lib
+# FOR LINUX VERSION
+#CSWITCHES = -O -DLINUX -I/usr/X11R6/include -L/usr/X11R6/lib
+#FOR MAC VERSION
+CSWITCHES = -O -I/usr/X11R6/include -L/usr/X11R6/lib
 
 # TRILIBDEFS is a list of definitions used to compile an object code version
 #   of Triangle (triangle.o) to be called by another program.  The file

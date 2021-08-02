@@ -1650,8 +1650,8 @@ void EllipseLayoutGenerator::smooth(int pointAvr, vector <float>&  x, vector <fl
 
 void EllipseLayoutGenerator::scaleToTissueSize(double* boundingBox, vector <float>&  x, vector <float>& y){
 	//bounding box format: [minX , minY, maxX, maxY]	
-	float sizeOutline[2] = {boundingBox[2] - boundingBox[0],  boundingBox[3] - boundingBox[1]};
-	float sizeTissue[2] = {r1[0]+r1[1],  r2[0]+r2[1]};
+        double sizeOutline[2] = {boundingBox[2] - boundingBox[0],  boundingBox[3] - boundingBox[1]};
+        double sizeTissue[2] = {r1[0]+r1[1],  r2[0]+r2[1]};
 	cout<<"desired size: " <<sizeTissue[0]<<" "<<sizeTissue[1]<<endl;
 	float xMultiplier = sizeTissue[0] / sizeOutline[0];
 	float yMultiplier = sizeTissue[1] / sizeOutline[1];
@@ -2120,7 +2120,7 @@ int main(int argc, char **argv)
 	// 2: wing disc 72 hr,
 	// 3: optic cup
 	// 4: x&y symmetric circle
-	int selectTissueType = 4; 
+        int selectTissueType = 1;
 	//Eliminate bluntTip function for type 4 with no x symmetricity! (half circle - not quarter)
 	if (selectTissueType == 0){ // 0 : wingdisc48Hr, 
 		symmetricY = true;
@@ -2259,7 +2259,7 @@ int main(int argc, char **argv)
 			bool correctActin = false;
 			if(ECMHeight<0){ECMHeight=0;denominator++;correctECM=true;}
 			if(basalLayerHeight<0){basalLayerHeight=0;denominator++;correctBasal=true;}
-			if(actinHeight<0){actinHeight==0;denominator++;correctActin=true;}
+                        if(actinHeight<0){actinHeight=0;denominator++;correctActin=true;}
 			modifiedZDueToThinActin = (ABHeight - ECMHeight - actinHeight -basalLayerHeight)/ denominator;
 			if (correctECM){ECMHeight= modifiedZDueToThinActin;}
 			if (correctBasal){basalLayerHeight= modifiedZDueToThinActin;}
@@ -2316,7 +2316,7 @@ int main(int argc, char **argv)
 			bool correctActin = false;
 			if(ECMHeight<0){ECMHeight=0;denominator++;correctECM=true;}
 			if(basalLayerHeight<0){basalLayerHeight=0;denominator++;correctBasal=true;}
-			if(actinHeight<0){actinHeight==0;denominator++;correctActin=true;}
+                        if(actinHeight<0){actinHeight=0;denominator++;correctActin=true;}
 			modifiedZDueToThinActin = (ABHeight - ECMHeight - actinHeight -basalLayerHeight)/ denominator;
 			if (correctECM){ECMHeight= modifiedZDueToThinActin;}
 			if (correctBasal){basalLayerHeight= modifiedZDueToThinActin;}
