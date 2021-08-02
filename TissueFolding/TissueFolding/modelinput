@@ -1,0 +1,369 @@
+InputMeshParameters:
+  MeshInputMode(int-seeDocumentation): 4
+  MeshFile(full-path): /home/melda/Documents/TissueFolding/ToolBox/MeshGeneration/2DEllipse/Exp48hr-noPeri-ThinECM_12.mesh
+
+  symmetricInX(bool): 0
+  symmetricInY(bool): 1
+ 
+TimeParameters:
+  TimeStep(sec): 2
+  SimulationLength(sec): 0
+  
+SaveOptions:
+  SaveImages(bool): 0
+  SaveData(bool):   1
+  ImageSaveInterval(sec): 1
+  DataSaveInterval(sec):  900
+
+NodeFixingOptions:
+  FixingViscosity(x,y,z): 0   0  34000
+  ApicSurfaceFix(bool-x,y,z):   0 0 0   FixApicalExtVisc(bool): 0
+  BasalSurfaceFix(bool-x,y,z):  0 0 0   FixBasalExtVisc(bool):  0
+  CircumferenceFix(bool-x,y,z): 0 0 0   FixCircWithExtVisc(bool): 0
+  ApicCircumFix(bool-x,y,z):    0 0 0   FixApicCircWithExtVisc(bool):  0
+  BasalCircumFix(bool-x,y,z):   0 0 0   FixBasalCircWithExtVisc(bool): 0
+  LinkerApicCircumFix(bool-x,y,z):  0 0 0  FixLinkerApicCircWithExtVisc(bool):  0
+  LinkerBasalCircumFix(bool-x,y,z): 0 0 0  FixLinkerBasalCircWithExtVisc(bool): 0
+  NotumFix(bool-x,y,z,double-xFracMin,xFracMax): 0 0 0 -0.1 0.5  FixNotumExtVisc(bool): 1
+
+NodeBindingOptions:
+  bindCircumferenceXYToBasal(bool): 0
+  bindEllipses(bool,nFunctions): 1 2
+  bindEllipseBases(bool-x,y,z,nEllipses,ellipseIds): 0 0 0 1 1
+  bindEllipseBases(bool-x,y,z,nEllipses,ellipseIds): 0 0 0 1 2
+
+Manipulations:
+  AddCurvature(bool): 0
+  CurvatureDepthAtCentre(double-microns): -1.0
+  AddSoftPeriphery(bool): 0
+  SoftPeripheryRange(double-microns): 10.0
+  SoftnessFraction(double-fraction): 0.2
+  ApplyToApicalSurface(bool): 1
+  ApplyToBasalSurface(bool): 0
+  ApplyToColumnarLayer(bool): 1
+  ApplyToPeripodialMembrane(bool): 1
+  AddRandomForce(bool): 0
+  RandomForceMean(double): 0.0
+  RandomForceVar(double): 1E-5
+
+PysicalProperties:
+  YoungsModulusApical: 100.0	YoungsModulusBasal: 25.0	YoungsModulusMid: 25.0	Noise(%-int): 0
+  PoissonsRatio: 0.29		Noise(%-int): 0
+  ApicalViscosity:  0.0 	Noise(%-int): 0
+  BasalViscosity:   0.0
+  MidLineViscosity: 0.0
+
+PeripodialMembraneParameters:
+  AddPeripodialMembrane: 0
+  PeripodialMembraneThickness(fractionOfTissueHeight): 0.1
+  PeripodialMembraneLateralThickness(fractionOfTissueHeight): 0.2
+  LumenHeightScale(fractionOfTissueHeight): 0.2
+  PeripodialMembraneYoungsModulus: 450.0
+  PeripodialMembraneApicalViscosity: 0.0
+  PeripodialMembraneBasalViscosity: 0.0
+  PeripodialMembraneMidlineViscosity: 0.0
+  AdherePeripodialToColumnarInZ(bool): 0
+
+LinkerZoneParameters:
+  BaseOnPeripodialness(bool): 0
+  LinkerZoneApicalYoungsModulus: 450
+  LinkerZoneBasalYoungsModulus: 450
+  LinkerZoneApicalViscosity: 0.0
+  LinkerZoneBasalViscosity: 0.0
+  LinkerZoneMidlineViscosity: 0.0
+
+ExplicitECMOptions:
+  ThereIsExplicitECM(bool): 1
+  AddLateralECM(bool): 1
+  LateralECMThickness(microns): 0.2
+  ECMRemodellingHalfLife(hour): 1.0
+  ECMColumnarYoungsModulus:  400
+  ECMPeripodialYoungsModulus:  100
+  
+AdhesionOptions:
+  ThereIsAdhesion(bool): 0
+  CollapseNodesOnAdhesion(bool): 1
+  
+NodeCollapseOptions:
+  ThereIsNodeCollapse(bool): 0
+
+ExternalViscositySetup:
+  ExtendToWholeTissue: 0
+  DiscProperApicalExternalViscosity: 4000.0 
+  DiscProperBasalExternalViscosity: 0.0 
+  PeripodialMembraneApicalExternalViscosity: 0.0
+  PeripodialMembraneBasalExternalViscosity: 0.0 
+  LinkerZoneApicalExternalViscosity: 0.0
+  LinkerZoneBasalExternalViscosity: 0.0
+  
+GrowthOptions:
+  NumberofGrowthFunctions(int): 7
+  GridGrowthsPinnedOnInitialMesh(bool): 1 
+  PinningUpdateTimes(number-times(sec)):  2 57600 115200
+  GridGrowthsInterpolationType(0=step,1=linear): 1
+
+  GrowthFunctionType(int-seeDocumentation): 1
+  InitialTime(sec): 0
+  FinalTime(sec):  36000
+  ApplyToColumnarLayer(bool): 0
+  ApplyToPeripodialMembrane(bool): 0
+  ApplyToBasalECM(bool): 0
+  ApplyToLateralECM(bool): 0
+  MaxValue(fractionPerHour-DV,AP,AB): 0.01444 0.01444 0.0
+  Angle(degrees): 0
+
+  GrowthFunctionType(int-seeDocumentation): 2
+  InitialTime(sec): 100000
+  FinalTime(sec):  86400
+  ApplyToColumnarLayer(bool): 0
+  ApplyToPeripodialMembrane(bool): 0
+  ApplyToBasalECM(bool): 0
+  ApplyToLateralECM(bool): 0
+  Centre:  30.0 0.0
+  InnerRadius: 30.0
+  OuterRadius:  40.0
+  MaxValue(fractionPerHour-DV,AP,AB): -0.062 -0.062 0
+  Angle(degrees): 0
+
+  GrowthFunctionType(int-seeDocumentation): 3				
+  InitialTime(sec):  100000
+  FinalTime(sec):  57600
+  ApplyToColumnarLayer(bool): 1
+  ApplyToPeripodialMembrane(bool): 0
+  ApplyToBasalECM(bool): 0
+  ApplyToLateralECM(bool): 0
+  Filename(full-path): /home/melda/Documents/TissueFolding/ToolBox/GrowtRates/Growth_48-72hr_0_0_1_0_2
+  zRange: 0.0 1.0
+
+  GrowthFunctionType(int-seeDocumentation): 3
+  InitialTime(sec):  57600
+  FinalTime(sec):  115200
+  ApplyToColumnarLayer(bool): 1
+  ApplyToPeripodialMembrane(bool): 0
+  ApplyToBasalECM(bool): 0
+  ApplyToLateralECM(bool): 0
+  Filename(full-path): /home/melda/Documents/TissueFolding/ToolBox/GrowtRates/Growth_56-88hr_1_0_1_0_2
+  zRange: 0.0 1.0
+
+  GrowthFunctionType(int-seeDocumentation): 3
+  InitialTime(sec):  115200
+  FinalTime(sec):  172800
+  ApplyToColumnarLayer(bool): 1
+  ApplyToPeripodialMembrane(bool): 0
+  ApplyToBasalECM(bool): 0
+  ApplyToLateralECM(bool): 0
+  Filename(full-path): /home/melda/Documents/TissueFolding/ToolBox/GrowtRates/Growth_72-96hr_1_0_1_0_2
+  zRange: 0.0 1.0
+
+  
+  GrowthFunctionType(int-seeDocumentation): 3
+  InitialTime(sec):  115200
+  FinalTime(sec):  172800
+  ApplyToColumnarLayer(bool): 0
+  ApplyToPeripodialMembrane(bool): 0
+  ApplyToBasalECM(bool): 0
+  ApplyToLateralECM(bool): 0
+  Filename(full-path): /home/melda/Documents/TissueFolding/ToolBox/GrowtRates/Growth_72-96hr_1_0_1_0_2
+  zRange: 0.0 1.0
+
+  GrowthFunctionType(int-seeDocumentation): 1 
+  InitialTime(sec): 200000
+  FinalTime(sec):  172800
+  ApplyToColumnarLayer(bool): 0
+  ApplyToPeripodialMembrane(bool): 0
+  ApplyToBasalECM(bool): 0
+  ApplyToLateralECM(bool): 0
+  MaxValue(fractionPerHour-DV,AP,AB): 0.033 0.033 0.0 
+  Angle(degrees): 0
+  
+ShapeChangeOptions:
+  NumberofShapeChangeFunctions(int): 2
+
+  ShapeChangeFunctionType(int-seeDocumentation): 2
+  InitialTime(sec):  60000
+  FinalTime(sec):  4200
+  ApplyTissueApical(bool): 0
+  ApplyTissueBasal(bool): 0
+  ApplyTissueMidline(bool): 0
+  ApplyToBasalECM(bool): 0
+  ApplyToLateralECM(bool): 0 
+  ShapeChangeAppliedToEllipses(number,[ellipseId][ellipseId]): 1 1 
+  xyShapeChange(fractionPerHour): -0.2
+  ConserveVolume(bool): 0
+
+  ShapeChangeFunctionType(int-seeDocumentation): 2
+  InitialTime(sec):  10000
+  FinalTime(sec):  11400
+  ApplyTissueApical(bool): 0
+  ApplyTissueBasal(bool): 0
+  ApplyTissueMidline(bool): 0
+  ApplyToBasalECM(bool): 0
+  ApplyToLateralECM(bool): 0
+  ShapeChangeAppliedToEllipses(number,[ellipseId][ellipseId]): 1 3
+  xyShapeChange(fractionPerHour): 0.216
+  ConserveVolume(bool): 1
+  
+PlasticDeformationOptions:
+  ThereIsPlasticDeformation(bool): 0
+  ApplyToColumnarLayer(bool): 1
+  ApplyToPeripodialMembrane(bool): 1
+  VolumeConserved(bool): 1
+  DeformationHalfLife(hour): 0.5
+  zDeformationLimits(lowerFraction-upperFraction): 0.99  1.0
+
+MyosinOptions:
+  MyosinDiffusionRate(double-1/sec): 0.09873
+  ForcePerMyosinMolecule(double):  100.0
+  ThereIsMyosinFeedback(bool): 0
+  MyosinFeedbackCap: 1
+  NumberofMyosinFunctions(int): 3
+
+  InitialTime(sec):   0
+  ApplyToColumnarLayer(bool): 0
+  ApplyToPeripodialMembrane(bool): 0
+  isApical(bool): 1
+  isPolarised(bool): 0
+  ManualStripes(bool): 1
+  StripeSizes(micron-0forNoGap): 0 0
+  LowerEndPoint(micron): -1000.0
+  UpperEndPoint(micron):  1000.0
+  EquilibriumMyosinLevel(double): 10.0
+  MyosinOrientation(degrees): 0.0
+
+  InitialTime(sec):   0
+  ApplyToColumnarLayer(bool): 0
+  ApplyToPeripodialMembrane(bool): 0
+  isApical(bool): 1
+  isPolarised(bool): 0
+  ManualStripes(bool): 0
+  UseEllipses(bool): 0
+  EquilibriumConcentrationFilename(full-path): /home/melda/Documents/TissueFolding/ToolBox/MyosinLevels/EquilibriumMyosinMidFoldApical
+  OrientationAngleFilename(full-path): /home/melda/Documents/TissueFolding/ToolBox/MyosinLevels/EquilibriumMyosinMidFoldApicalAngles
+
+  InitialTime(sec):   0
+  ApplyToColumnarLayer(bool): 0
+  ApplyToPeripodialMembrane(bool): 0
+  isApical(bool): 1
+  isPolarised(bool): 0
+  ManualStripes(bool): 0
+  UseEllipses(bool): 1
+  isLateral(bool): 1
+  EquilibriumMyosinLevel(double): 100.0
+  myosinAppliedToEllipses(number,[ellipseId][ellipseId]): 2 0 1
+
+Stretcher:
+  StretcherAttached(bool): 0
+  ClampedOnDV(bool): 0
+  InitialTime(sec): 0
+  FinalTime(sec): 120
+  DVClampMin: -16
+  DVClampMax: +16
+  MaxStrain: 0.8
+
+Pipette_Aspiration:
+  PipetteAspitarionActive(bool): 0
+  NumberOfPressureStages(int): 8
+  InitiationTimes(sec): 10 50 100 300 600 900 1200 1500 
+  Pressures(Pa): 0 10 24.525 49.05 73.575 98.01 122.625 147.15
+  ApicalSuction(bool-will_set_up_basal_suction_if_false): 1
+  TissueStuck(bool-will_fix_the_opposite_surface_in_z): 0
+  Centre_Position(x,y,z): 0.0 0.0 24.0
+  Pipette_InnerRadius(micron): 11.0
+  Pipette_OuterRadius(micron): 16.0
+  Pipette_Effect_Depth(micron): 2.0
+  Pipette_Suction_Pressure(x,y,z-unit): 0.0 0.0 25.0
+
+ECM_Perturbation:
+  ThereIsECMStiffnessChange(bool): 0
+  NumberOfECMPerturbations(int): 3
+  
+  ApplyToApicalECM(bool): 0
+  ApplyToBasalECM(bool): 1
+  AppliedElementsAreEmergent(bool): 0
+  timeOfStiffnessChange(hr): 20 30
+  stiffnessChangeAppliedToEllipses(number,[ellipseId][ellipseId]): 1 1 
+  stiffnessChangeFraction(double(0-1.0)):  0.1
+  ECMRenewalHalfLifeTargetFraction(double(0-1.0)): 1.0
+  ECMViscosityChangeFraction(double): 1.0
+  
+  ApplyToApicalECM(bool): 0
+  ApplyToBasalECM(bool): 0
+  AppliedElementsAreEmergent(bool): 0
+  timeOfStiffnessChange(hr): 27 29
+  stiffnessChangeAppliedToEllipses(number,[ellipseId][ellipseId]): 1 0 
+  stiffnessChangeFraction(double(0-1.0)):  0.1
+  ECMRenewalHalfLifeTargetFraction(double(0-1.0)): 0.1
+  ECMViscosityChangeFraction(double): 0.1
+  
+  ApplyToApicalECM(bool): 0
+  ApplyToBasalECM(bool): 0
+  AppliedElementsAreEmergent(bool): 0
+  timeOfStiffnessChange(hr): 30 32
+  stiffnessChangeAppliedToEllipses(number,[ellipseId][ellipseId]): 1 2
+  stiffnessChangeFraction(double(0-1.0)):  0.1
+  ECMRenewalHalfLifeTargetFraction(double(0-1.0)): 0.1
+  ECMViscosityChangeFraction(double): 0.1
+	
+Stiffness_Perturbation:
+  ThereIsStiffnessPerturbation(bool): 0
+  NumberOfStiffnessPerturbations(int): 2
+  
+  ApplyToApically(bool): 0
+  ApplyBasally(bool): 0
+  ApplyToWholeTissue(bool): 0
+  Basolateral(bool): 0
+  BasolateralWithApicalRelaxation(bool): 1
+  timeOfStiffeningPerturbation(hr): 2 3
+  stiffnessPerturbationAppliedToEllipses(number,[ellipseId][ellipseId]): 1 0 
+  stiffnessChangedToFractionOfOriginal(double):  4.0
+  
+  ApplyToApically(bool): 0
+  ApplyBasally(bool): 0
+  ApplyToWholeTissue(bool): 0
+  Basolateral(bool): 1
+  BasolateralWithApicalRelaxation(bool): 0
+  timeOfStiffeningPerturbation(hr): 7 8
+  stiffnessPerturbationAppliedToEllipses(number,[ellipseId][ellipseId]): 1 2
+  stiffnessChangedToFractionOfOriginal(double):  4
+  
+ExplicitActinOptions:
+  ThereIsExplicitActin(bool): 0
+
+  
+Cell_Migration:
+  ThereIsCellMigration(bool): 0
+
+MutationOptions:
+  numberOfClones(int): 1
+  cloneInformation(double-relativeX,relativeY,micronRadius,usingAbsoluteGrowth(bool),growthRatePerHour_OR_growthFoldIncrease):
+  2.05 1.5 5 0 2.0
+
+ApicoBasalVolumeRedistributionOptions:
+  NumberOfVolumeRedistributionFunctions(int): 2
+  
+  timeOfVolumeRedistribution(hr): 90 100
+  shrinksApicalSide(bool): 1
+  redistributionFractionOver24Hours(double,0-1): 0.5
+  volumeRedistributionAppliedToEllipses(number,[ellipseId][ellipseId]): 3 3 4 5
+  
+  timeOfVolumeRedistribution(hr): 90 100
+  shrinksApicalSide(bool): 0
+  redistributionFractionOver24Hours(double,0-1): 0.5
+  volumeRedistributionAppliedToEllipses(number,[ellipseId][ellipseId]): 2 1 2
+ 
+  
+zShellOptions:
+  thereIsEnclosementOfTheTissue(bool): 0
+  initialLimits(lowerBound,upperBound): -5.50  31.0
+  finalLimits(lowerBound,upperBound):   -5.50  40.0
+  initialTime(sec):	0
+  finalTime(sec):	57600
+
+Marker_Ellipses:
+  numberOfMarkerEllipses(int): 7
+  MarkerEllipseXCenters(fractionOfTissueSize): -0.1 0.35 0.25 0.35 0.25 0.75 -0.1
+  MarkerEllipseBandR1Ranges(fractionOfTissueSize-x1Low-x1High): -0.01  -0.6 -0.14  -0.25 -0.32  -0.38   -0.12  -0.15 -0.28  -0.32  0.11  0.17 -0.01  -1.5  
+  MarkerEllipseBandR2Ranges(fractionOfTissueSize-y2Low-y2High):  0.7    1.5  0.9    1.2   1.7    1.8     0.9    1.0   1.7    1.8    0.8   0.9  0.7    1.5
+
+
+ 
