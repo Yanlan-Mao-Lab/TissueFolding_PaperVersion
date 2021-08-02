@@ -1,0 +1,27 @@
+#folders #
+##########
+*~
+.*
+!/.gitignore
+Archive/
+bin/
+RemoteSystemsTempFiles/
+TissueFolding/Debug/
+UserInterface/Debug/
+
+# Specific Files #
+##################
+*gmon.out
+*Out
+moc_*
+
+# compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+

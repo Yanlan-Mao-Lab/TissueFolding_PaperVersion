@@ -1,0 +1,168 @@
+\hypertarget{classPrism}{}\section{Prism Class Reference}
+\label{classPrism}\index{Prism@{Prism}}
+Inheritance diagram for Prism\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPrism}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPrism_aa107f8923cbbc9e1881cf98666743ae6}{}{\bfseries Prism} (int $\ast$Node\+Ids, vector$<$ \hyperlink{classNode}{Node} $\ast$ $>$ \&Nodes, int Curr\+Id)\label{classPrism_aa107f8923cbbc9e1881cf98666743ae6}
+
+\item 
+\hypertarget{classPrism_ab1eaaa559c1997fa7b30e84d7ce6b2d5}{}void {\bfseries set\+Elastic\+Properties} (double E\+Apical, double E\+Basal, double E\+Mid, double v)\label{classPrism_ab1eaaa559c1997fa7b30e84d7ce6b2d5}
+
+\item 
+\hypertarget{classPrism_aa65f89d72659c92de21c411a2fa23a7e}{}void {\bfseries calculate\+Basal\+Normal} (double $\ast$normal)\label{classPrism_aa65f89d72659c92de21c411a2fa23a7e}
+
+\item 
+\hypertarget{classPrism_a64100d877e59727ab9b7e9ad56e17cee}{}void {\bfseries Align\+Reference\+Base\+Normal\+To\+Z} ()\label{classPrism_a64100d877e59727ab9b7e9ad56e17cee}
+
+\item 
+\hypertarget{classPrism_a9a877cebf651015b88af641f1e045699}{}void {\bfseries calculate\+Element\+Shape\+Function\+Derivatives} ()\label{classPrism_a9a877cebf651015b88af641f1e045699}
+
+\item 
+\hypertarget{classPrism_af4ce210a9ba20d34b4b903e936b9dd8d}{}void {\bfseries check\+Health} ()\label{classPrism_af4ce210a9ba20d34b4b903e936b9dd8d}
+
+\item 
+\hypertarget{classPrism_ad9b04b2ad4cdedb878b4c7c0b4917a7a}{}void {\bfseries get\+Apical\+Triangles} (vector$<$ int $>$ \&Apical\+Triangles)\label{classPrism_ad9b04b2ad4cdedb878b4c7c0b4917a7a}
+
+\item 
+\hypertarget{classPrism_a10377e0ad0ae454a3cd25b82709119ac}{}int {\bfseries get\+Correcponding\+Apical} (int curr\+Node\+Id)\label{classPrism_a10377e0ad0ae454a3cd25b82709119ac}
+
+\item 
+\hypertarget{classPrism_abe648c5fa60635a50c14186135bed332}{}bool {\bfseries Is\+This\+Node\+My\+Basal} (int curr\+Node\+Id)\label{classPrism_abe648c5fa60635a50c14186135bed332}
+
+\item 
+\hypertarget{classPrism_a91d08cfcf6bf111f5d9e314499bafd11}{}double {\bfseries get\+Element\+Height} ()\label{classPrism_a91d08cfcf6bf111f5d9e314499bafd11}
+
+\item 
+\hypertarget{classPrism_aea2d84b05534bb2aedcdb49a53eab1ae}{}void {\bfseries Add\+Packing\+To\+Surface} (int tissueplacement\+Of\+Packing\+Node, double Fx, double Fy, double Fz, double $\ast$$\ast$Packing\+Forces, vector$<$ \hyperlink{classNode}{Node} $\ast$ $>$ \&Nodes, bool \&all\+Corners\+Fixed\+X, bool \&all\+Corners\+Fixed\+Y, bool \&all\+Corners\+Fixed\+Z)\label{classPrism_aea2d84b05534bb2aedcdb49a53eab1ae}
+
+\item 
+\hypertarget{classPrism_aa153c49304a9d808af5ea65a40f89128}{}void {\bfseries get\+Relevant\+Nodes\+For\+Packing} (int Tissue\+Placement\+Of\+Packing\+Node, int Tissue\+Type\+Of\+Packing\+Node, int \&id1, int \&id2, int \&id3)\label{classPrism_aa153c49304a9d808af5ea65a40f89128}
+
+\item 
+\hypertarget{classPrism_a45363ee4cc0dddd82ef567846a6bf123}{}bool {\bfseries Is\+Point\+Close\+Enough\+For\+Packing} (double $\ast$Pos, float threshold, int Tissue\+Placement\+Of\+Packing\+Node, int Tissue\+Type\+Of\+Packing\+Node)\label{classPrism_a45363ee4cc0dddd82ef567846a6bf123}
+
+\item 
+\hypertarget{classPrism_acb1603367b049392cebfc20b3aaeab87}{}void {\bfseries calculate\+Normal\+For\+Packing} (int tissue\+Placement\+Of\+Normal)\label{classPrism_acb1603367b049392cebfc20b3aaeab87}
+
+\item 
+\hypertarget{classPrism_a67e80515fb1cdf4438b4b7d47334bd2e}{}void {\bfseries calculate\+Apical\+Area} ()\label{classPrism_a67e80515fb1cdf4438b4b7d47334bd2e}
+
+\item 
+\hypertarget{classPrism_aa8dd4b90cdaecdbabfb48f45a9bcdc95}{}void {\bfseries calculate\+Basal\+Area} ()\label{classPrism_aa8dd4b90cdaecdbabfb48f45a9bcdc95}
+
+\item 
+\hypertarget{classPrism_a306261925defdb79ba64fc5f9ef8a23d}{}void {\bfseries calculate\+Myosin\+Forces} (double force\+Per\+Myo\+Molecule)\label{classPrism_a306261925defdb79ba64fc5f9ef8a23d}
+
+\item 
+\hypertarget{classPrism_ab11b5901fc7d65f71c7cccd1ce94a273}{}void {\bfseries distribute\+Myosin\+Force} (bool is\+Isotropic, bool apical, double force\+Per\+Myo\+Molecule)\label{classPrism_ab11b5901fc7d65f71c7cccd1ce94a273}
+
+\item 
+\hypertarget{classPrism_a243934a73a8f198ed592761ecb0927b9}{}void {\bfseries get\+Apical\+Node\+Pos} (double $\ast$pos\+Corner)\label{classPrism_a243934a73a8f198ed592761ecb0927b9}
+
+\item 
+\hypertarget{classPrism_a31324d23b37fa20911916ebb7ee1064d}{}void {\bfseries get\+Basal\+Node\+Pos} (double $\ast$pos\+Corner)\label{classPrism_a31324d23b37fa20911916ebb7ee1064d}
+
+\item 
+\hypertarget{classPrism_a26bb1eed04307a373ba87b48f1c1a3ca}{}bool {\bfseries Ispoint\+Inside\+Triangle} (int tissueplacement, double x, double y, double z)\label{classPrism_a26bb1eed04307a373ba87b48f1c1a3ca}
+
+\item 
+\hypertarget{classPrism_a85f9b472a3310e76ab0c76bd1fb7dd30}{}void {\bfseries check\+Rotation\+Consistency3\+D} ()\label{classPrism_a85f9b472a3310e76ab0c76bd1fb7dd30}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPrism_a39d403ac6ffb6b56d5b2d07f8e9463a4}{}void {\bfseries set\+Tissue\+Coords\+Rotations\+Buffers} ()\label{classPrism_a39d403ac6ffb6b56d5b2d07f8e9463a4}
+
+\item 
+\hypertarget{classPrism_a3c252dc104a1ca7208b23c72737cd916}{}void {\bfseries get\+Curr\+Relaxed\+Shape} (gsl\+\_\+matrix $\ast$Curr\+Relaxed\+Shape)\label{classPrism_a3c252dc104a1ca7208b23c72737cd916}
+
+\item 
+\hypertarget{classPrism_aa1a4d3411d1f3dc05816ec01dcfa8310}{}void {\bfseries set\+Shape\+Function\+Derivatives} (gsl\+\_\+matrix $\ast$Shape\+Func\+Der, double eta, double zeta, double nu)\label{classPrism_aa1a4d3411d1f3dc05816ec01dcfa8310}
+
+\item 
+\hypertarget{classPrism_aa1f76f3cabdd00eb057f41cebbaa466d}{}void {\bfseries set\+Shape\+Function\+Derivative\+Stack} (gsl\+\_\+matrix $\ast$Shape\+Func\+Der, gsl\+\_\+matrix $\ast$Shape\+Func\+Der\+Stack)\label{classPrism_aa1f76f3cabdd00eb057f41cebbaa466d}
+
+\item 
+\hypertarget{classPrism_a0575442613f8b7d9428c58cef19ab219}{}void {\bfseries set\+Coeff\+Mat} ()\label{classPrism_a0575442613f8b7d9428c58cef19ab219}
+
+\item 
+\hypertarget{classPrism_aa433244f86cdf23a611a1adc3391c3f0}{}void {\bfseries calculate\+Currk} (boost\+::numeric\+::ublas\+::matrix$<$ double $>$ \&currk, boost\+::numeric\+::ublas\+::matrix$<$ double $>$ \&curr\+B, boost\+::numeric\+::ublas\+::matrix$<$ double $>$ \&curr\+B\+E, boost\+::numeric\+::ublas\+::matrix$<$ double $>$ \&curr\+Bo, double eta, double zeta, double nu)\label{classPrism_aa433244f86cdf23a611a1adc3391c3f0}
+
+\item 
+void \hyperlink{classPrism_a606fbf422f9d652e0f697ea93dc2e088}{calculate\+Curr\+Nodal\+Forces} (gsl\+\_\+matrix $\ast$gslcurrge, gsl\+\_\+matrix $\ast$gslcurrgv, gsl\+\_\+matrix $\ast$gslcurr\+F, gsl\+\_\+matrix $\ast$displacement\+Per\+Dt, int point\+No)
+\item 
+\hypertarget{classPrism_ae9403142a217a005a4d588a6e472be27}{}void {\bfseries calculate\+Curr\+Tri\+Point\+F\+For\+Rotation} (gsl\+\_\+matrix $\ast$curr\+F, int point\+No)\label{classPrism_ae9403142a217a005a4d588a6e472be27}
+
+\item 
+\hypertarget{classPrism_a872ce1e6304b1400d2d0e712af2a0131}{}void {\bfseries calculate\+Normal\+To\+Bottom} ()\label{classPrism_a872ce1e6304b1400d2d0e712af2a0131}
+
+\item 
+\hypertarget{classPrism_a2d8821dcd96009c95f06f34ee23ede7e}{}void {\bfseries calculate\+Reference\+Normal\+To\+Bottom} ()\label{classPrism_a2d8821dcd96009c95f06f34ee23ede7e}
+
+\item 
+\hypertarget{classPrism_ac3b85296d366eb4dd67406228c519caf}{}void {\bfseries calculate\+Normal\+To\+Top} ()\label{classPrism_ac3b85296d366eb4dd67406228c519caf}
+
+\item 
+\hypertarget{classPrism_a41a101de7bb2f75c5f9b44de23187593}{}void {\bfseries calculate\+Reference\+Normal\+To\+Top} ()\label{classPrism_a41a101de7bb2f75c5f9b44de23187593}
+
+\item 
+\hypertarget{classPrism_a6144314003601a688d81b0389ea1114e}{}void {\bfseries get\+Current\+Alignment\+Sides} (double $\ast$, double $\ast$)\label{classPrism_a6144314003601a688d81b0389ea1114e}
+
+\item 
+\hypertarget{classPrism_ab5fa417d944a6903b5bc9d2f53d4616a}{}void {\bfseries get\+Current\+Alignment\+Faces} (double $\ast$Ref\+Side, double $\ast$Shape\+Side, double $\ast$Ref\+Face, double $\ast$Shape\+Face)\label{classPrism_ab5fa417d944a6903b5bc9d2f53d4616a}
+
+\item 
+\hypertarget{classPrism_a4472375144e5e38a912af1fb4e2cc2d1}{}void {\bfseries update\+Alignment\+Turn} ()\label{classPrism_a4472375144e5e38a912af1fb4e2cc2d1}
+
+\item 
+\hypertarget{classPrism_a4ea58fd729a2bbef20530200978a8f75}{}void {\bfseries calculate\+Reference\+Volume} ()\label{classPrism_a4ea58fd729a2bbef20530200978a8f75}
+
+\item 
+\hypertarget{classPrism_a6b273d198e94039758a027b0dfb2c8af}{}void {\bfseries calculate\+Plane\+Normals} (double $\ast$$\ast$normals)\label{classPrism_a6b273d198e94039758a027b0dfb2c8af}
+
+\item 
+\hypertarget{classPrism_a13de4e8cefb58b3a33de4c2f7265a3b0}{}void {\bfseries assign\+Nodal\+Vector} (double $\ast$vec, int id0, int id1)\label{classPrism_a13de4e8cefb58b3a33de4c2f7265a3b0}
+
+\item 
+\hypertarget{classPrism_ac9695169749356654e847a022ce29aff}{}bool {\bfseries check\+Node\+Plane\+Consistency} (double $\ast$$\ast$normals)\label{classPrism_ac9695169749356654e847a022ce29aff}
+
+\item 
+\hypertarget{classPrism_acc59ccf5e1b5f459a8fb871c2a78fe8e}{}double {\bfseries get\+Apical\+Side\+Length\+Average} ()\label{classPrism_acc59ccf5e1b5f459a8fb871c2a78fe8e}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPrism_a606fbf422f9d652e0f697ea93dc2e088}{}\index{Prism@{Prism}!calculate\+Curr\+Nodal\+Forces@{calculate\+Curr\+Nodal\+Forces}}
+\index{calculate\+Curr\+Nodal\+Forces@{calculate\+Curr\+Nodal\+Forces}!Prism@{Prism}}
+\subsubsection[{calculate\+Curr\+Nodal\+Forces}]{\setlength{\rightskip}{0pt plus 5cm}void Prism\+::calculate\+Curr\+Nodal\+Forces (
+\begin{DoxyParamCaption}
+\item[{gsl\+\_\+matrix $\ast$}]{gslcurrge, }
+\item[{gsl\+\_\+matrix $\ast$}]{gslcurrgv, }
+\item[{gsl\+\_\+matrix $\ast$}]{gslcurr\+F, }
+\item[{gsl\+\_\+matrix $\ast$}]{displacement\+Per\+Dt, }
+\item[{int}]{point\+No}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPrism_a606fbf422f9d652e0f697ea93dc2e088}
+$<$ Removing growth
+
+$<$ Removing shape change
+
+$<$ Removing shape change 
+
+Reimplemented from \hyperlink{classShapeBase}{Shape\+Base}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/melda/\+Documents/\+Tissue\+Folding/\+Tissue\+Folding/\+Source\+Code/Prism.\+h\item 
+/home/melda/\+Documents/\+Tissue\+Folding/\+Tissue\+Folding/\+Source\+Code/Prism.\+cpp\end{DoxyCompactItemize}

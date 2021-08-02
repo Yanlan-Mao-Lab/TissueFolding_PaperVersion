@@ -1,0 +1,334 @@
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 5 5 3 3 0.8 2.0 1
+cp MeshFile.out ./TestPrism.mesh
+cp TriangleFile.out  ./TestTri.mesh
+
+
+%This is a mesh for realistic wing size at 72hr after egg laying:
+% 72 hours:
+% The dimensions of the wing are DV:210, AP: 130, and AB: 25 microns. The widest point of the disc is approximately at 150 microns.
+% This translates to - 
+% 	radia: 60 150 65 65
+%	Disc Height: 25 
+
+% 48 hours:
+% From Julihcer09, The dimensions of the wing are DV:146, AP: 82.
+% this is DV scaled down by 0.695, and AP scaled down by 0.631
+% I approximate a 65% scale down for AB: 16.25 microns
+% Approximating the widest point of the disc to be at 71%, it is 104 microns.
+% This translates to - 
+% 	radia: 42 104 41 41
+%	Disc Height: 16.25
+
+% 48 hours - measurements from Yanlan's data - 
+% DV: 84 - AP: 46 - cross-section of maximal point(from (-)ve x): 50 - and AB: 12.5 for columnar layer.
+% This translates to  -
+% 	radia: 34 50 23 23 
+% Then there is the side curve measurement of 5.52 microns at 48 hours.
+% With this correction:
+%       radia: 28.48 44.48 17.48 17.48
+% format is shapetype r1-1 r1-2 r2-1 r2-2 z-height sidelength numberofzlayers
+
+% 72 hr measurements for Maria
+% DV: 210 - AP: 130 - cross-section of maximal point(from (-)ve x): 150 - and AB: 16.
+% This translates to  -
+% 	radia: 150 60 65 65 
+% Then there is the side curve measurement of 7.1 microns at 72 hours.
+% With this correction:
+%       radia: 52.9 142.9 57.9 57.9
+% format is shapetype r1-1 r1-2 r2-1 r2-2 z-height sidelength numberofzlayers
+
+
+rm Test* MeshFile.out 
+%for this  scaledSideLen = sideLen*0.8;
+./EllipseFromOutline 1 28.48 44.48 17.48 17.48 12.5 6.25 2 1  ./inputOutlines/48hrDiscOutline
+cp MeshFile.out ./Exp48hr_04.mesh
+
+rm Test* MeshFile.out 
+%for this scaledSideLen = sideLen*0.9;
+./EllipseFromOutline 1 28.48 44.48 17.48 17.48 12.5 4 2 1  ./inputOutlines/48hrDiscOutline
+cp MeshFile.out ./Exp48hr_05.mesh
+
+rm Test* MeshFile.out 
+%for this scaledSideLen = sideLen*0.9;
+./EllipseFromOutline 1 28.48 44.48 17.48 17.48 12.5 4 3 1  ./inputOutlines/48hrDiscOutline
+cp MeshFile.out ./Exp48hr_06.mesh
+
+rm Test* MeshFile.out 
+%scaledSideLen = sideLen*1.3;
+./EllipseFromOutline 1 28.48 44.48 17.48 17.48 12.5 3 4 1  ./inputOutlines/48hrDiscOutline
+cp MeshFile.out ./Exp48hr_07.mesh
+
+rm Test* MeshFile.out 
+%scaledSideLen = sideLen*2.0;
+./EllipseFromOutline 1 28.48 44.48 17.48 17.48 12.5 2 5 1  ./inputOutlines/48hrDiscOutline
+cp MeshFile.out ./Exp48hr_08.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 25 1 0 
+cp MeshFile.out ./Wind48hr_01.mesh
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 25 1 1 
+cp MeshFile.out ./Wind48hrSymY_01.mesh
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 28.75 17.25 12.5 25 1 0 
+cp MeshFile.out ./Wind48hrPAnonSym_01.mesh
+
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 12.5 1 0
+cp MeshFile.out ./Wind48hr_02.mesh
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 12.5 1 1
+cp MeshFile.out ./Wind48hrSymY_02.mesh
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 28.75 17.25 12.5 12.5 1 0
+cp MeshFile.out ./Wind48hPAnonSym_02.mesh
+
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 8 1 0
+cp MeshFile.out ./Wind48hr_03.mesh
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 8 1 1
+cp MeshFile.out ./Wind48hrSymY_03.mesh
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 28.75 17.25 12.5 8 1 0
+cp MeshFile.out ./Wind48hPAnonSym_03.mesh
+
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 6.25 2 0
+cp MeshFile.out ./Wind48hr_04.mesh
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 6.25 2 1
+cp MeshFile.out ./Wind48hrSymY_04.mesh
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 28.75 17.25 12.5 6.25 2 0
+cp MeshFile.out ./Wind48hPAnonSym_04.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 4 2 0
+cp MeshFile.out ./Wind48hr_05.mesh
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 4 2 1
+cp MeshFile.out ./Wind48hrSymY_05.mesh
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 28.75 17.25 12.5 4 2 0
+cp MeshFile.out ./Wind48hPAnonSym_05.mes
+
+
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 4 3 0
+cp MeshFile.out ./Wind48hr_06.mesh 
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 4 3 1
+cp MeshFile.out ./Wind48hrSymY_06.mesh
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 28.75 17.25 12.5 4 3 0
+cp MeshFile.out ./Wind48hPAnonSym_06.mes
+
+
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 3.1 4 0
+cp MeshFile.out ./Wind48hr_07.mesh
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 3.1 4 1
+cp MeshFile.out ./Wind48hrSymY_07.mesh
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 28.75 17.25 12.5 3.1 4 0
+cp MeshFile.out ./Wind48hPAnonSym_07.mes
+
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 2 5 0
+cp MeshFile.out ./Wind48hr_08.mesh
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 23 23 12.5 2 5 1
+cp MeshFile.out ./Wind48hrSymY_08.mesh
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 34 50 28.75 17.25 12.5 2 5 0
+cp MeshFile.out ./Wind48hPAnonSym_08.mes
+
+
+
+
+
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 60 150 65 65 25 25 1
+cp MeshFile.out ./Wind72hr_01.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 60 150 65 65 25 12.5 1
+cp MeshFile.out ./Wind72hr_02.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 60 150 65 65 25 12.5 2
+cp MeshFile.out ./Wind72hr_03.mesh
+./Ellipse 1 60 150 65 65 25 12.5 2 1
+cp MeshFile.out ./Wind72hrSymY_03.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 60 150 65 65 25 8 3
+cp MeshFile.out ./Wind72hr_04.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 60 150 65 65 25 6.25 4
+cp MeshFile.out ./Wind72hr_05.mesh
+
+
+
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 77 189 88.5 88.5 50 25 2
+cp MeshFile.out ./Wind96hr_01.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 77 189 88.5 88.5 50 12.5 2
+cp MeshFile.out ./Wind96hr_02.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 77 189 88.5 88.5 50 12.5 4
+cp MeshFile.out ./Wind96hr_03.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 77 189 88.5 88.5 50 8 4
+cp MeshFile.out ./Wind96hr_04.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 77 189 88.5 88.5 50 5 4
+cp MeshFile.out ./Wind96hr_05.mesh
+
+
+
+
+
+
+
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 119 259 138 138 50 25 2
+cp MeshFile.out ./Wind120hr_01.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 119 259 138 138 50 12.5 2
+cp MeshFile.out ./Wind120hr_02.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 119 259 138 138 50 12.5 4
+cp MeshFile.out ./Wind120hr_03.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 119 259 138 138 50 8 1
+cp MeshFile.out ./Wind120hr_04.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 119 259 138 138 50 8 2
+cp MeshFile.out ./Wind120hr_05.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 119 259 138 138 50 8 6
+cp MeshFile.out ./Wind120hr_06.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 119 259 138 138 50 5 1
+cp MeshFile.out ./Wind120hr_07.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 119 259 138 138 50 5 2
+cp MeshFile.out ./Wind120hr_08.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 119 259 138 138 50 5 4
+cp MeshFile.out ./Wind120hr_09.mesh
+
+
+
+
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 50 50 50 50 50 8 5
+cp MeshFile.out ./50micronCircle_04.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 50 50 50 50 50 5 5
+cp MeshFile.out ./50micronCircle_05.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 35 35 35 35 50 8 5
+cp MeshFile.out ./35micronCircle_04.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 35 35 35 35 50 5 5
+cp MeshFile.out ./35micronCircle_05.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 35 35 35 35 50 2.5 5
+cp MeshFile.out ./35micronCircle_06.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 25 25 25 25 25 3 3
+cp MeshFile.out ./25micronDisc_01.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 25 25 25 25 25 2 5
+cp MeshFile.out ./25micronDisc_02.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1 25 25 25 25 25 1 10
+cp MeshFile.out ./25micronDisc_03.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1  10 10 10 10 5 1 3
+cp MeshFile.out ./10micronDisc_01.mesh
+
+rm Test* MeshFile.out TriangleFile.out 
+./Ellipse 1  10 10 10 10 5 1 2
+cp MeshFile.out ./10micronDisc_02.mesh
+
+
+
+
+
+
+
+
+
+
+Large 48 hours. The average is 106.5 to 64.8 microns. The cross point at 64 microns.
+Without taking the curve region into account this traslates to a shape of:
+42.5 64 32.4 32.4
+
+rm Test* MeshFile.out 
+%for this  scaledSideLen = sideLen*0.95;
+%maxArea = maxArea*2.0;
+./EllipseFromOutline 1 42.5 64 32.4 32.4 12.5 6.25 2 1  ./inputOutlines/48hrDiscOutline
+cp MeshFile.out ./LargeExp48hr_04.mesh
+
+rm Test* MeshFile.out 
+%for this scaledSideLen = sideLen*1.5;
+./EllipseFromOutline 1 42.5 64 32.4 32.4 12.5 4 2 1  ./inputOutlines/48hrDiscOutline
+cp MeshFile.out ./LargeExp48hr_05.mesh
+
+rm Test* MeshFile.out 
+%for this scaledSideLen = sideLen*1.5;
+./EllipseFromOutline 1 42.5 64 32.4 32.4 12.5 4 3 1  ./inputOutlines/48hrDiscOutline
+cp MeshFile.out ./LargeExp48hr_06.mesh
+
+rm Test* MeshFile.out 
+%for this scaledSideLen = sideLen*2.0;
+./EllipseFromOutline 1 42.5 64 32.4 32.4 12.5 3 4 1  ./inputOutlines/48hrDiscOutline
+cp MeshFile.out ./LargeExp48hr_07.mesh
+
+rm Test* MeshFile.out 
+%scaledSideLen = sideLen*3.0;
+./EllipseFromOutline 1 42.5 64 32.4 32.4 12.5 2 5 1  ./inputOutlines/48hrDiscOutline
+cp MeshFile.out ./LargeExp48hr_08.mesh
+
+
+
+
+
